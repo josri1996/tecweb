@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous" />
+    <script>
+        function show() {
+            // Obtener el id de la fila donde se hizo clic en el botón
+            var rowId = event.target.parentNode.parentNode.id;
+
+            // Obtener los datos de la fila en forma de arreglo
+            var data = document.getElementById(rowId).querySelectorAll(".row-data");
+
+            var name = data[0].innerHTML;
+            var age = data[1].innerHTML;
+
+            alert("Name: " + name + "\nAge: " + age);
+        }
+
+        // Función para editar un producto
+        function editProduct() {
+            var rowId = event.target.parentNode.parentNode.id;
+            var data = document.getElementById(rowId).querySelectorAll(".row-data");
+
+            var name = data[0].innerHTML;
+            var age = data[1].innerHTML;
+
+            // Aquí puedes implementar la lógica para permitir la edición de los datos,
+            // por ejemplo, mostrar un formulario de edición con los valores actuales.
+            alert("Editar: Name: " + name + "\nAge: " + age);
+        }
+    </script>
+</head>
+<body>
+    
+    <table class="table">
+        <tbody>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Submit</th>
+                <th scope="col">Modificar</th> <!-- Nueva columna de Modificar -->
+            </tr>
+
+            <tr id="1">
+                <th scope="row">1</th>
+                <td class="row-data">Sara</td>
+                <td class="row-data">23</td>
+                <td><input type="button" value="submit" onclick="show()" /></td>
+                <td><input type="button" value="Modificar" onclick="editProduct()" /></td> <!-- Botón de Modificar -->
+            </tr>
+
+            <tr id="2">
+                <th scope="row">2</th>
+                <td class="row-data">John</td>
+                <td class="row-data">30</td>
+                <td><input type="button" value="submit" onclick="show()" /></td>
+                <td><input type="button" value="Modificar" onclick="editProduct()" /></td> <!-- Botón de Modificar -->
+            </tr>
+
+            <tr id="3">
+                <th scope="row">3</th>
+                <td class="row-data">Naman</td>
+                <td class="row-data">20</td>
+                <td><input type="button" value="submit" onclick="show()" /></td>
+                <td><input type="button" value="Modificar" onclick="editProduct()" /></td> <!-- Botón de Modificar -->
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
